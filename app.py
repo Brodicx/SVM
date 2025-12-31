@@ -14,7 +14,6 @@ import seaborn as sns
 # Konfigurasi halaman
 st.set_page_config(
     page_title="Analisis Sentimen dengan SVM",
-    page_icon="😊",
     layout="wide"
 )
 
@@ -124,7 +123,7 @@ def load_model():
         return None, None
 
 # Header
-st.markdown('<h1 class="main-header">😊 Analisis Sentimen dengan SVM</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-header">Analisis Sentimen dengan SVM</h1>', unsafe_allow_html=True)
 st.markdown("---")
 
 # Sidebar
@@ -142,7 +141,7 @@ with st.sidebar:
     """)
     
     st.markdown("---")
-    st.header("⚙️ Pengaturan")
+    st.header("Pengaturan")
     show_preprocessing = st.checkbox("Tampilkan proses preprocessing", value=False)
 
 # Load preprocessing tools
@@ -207,14 +206,14 @@ else:
                         if prediction == 'positif':
                             st.markdown(f"""
                             <div class="prediction-box positive">
-                                <h2>😊 Sentimen: POSITIF</h2>
+                                <h2>Sentimen: POSITIF</h2>
                                 <p style="font-size: 1.2rem;">Tingkat Keyakinan: <strong>{probability[1]*100:.2f}%</strong></p>
                             </div>
                             """, unsafe_allow_html=True)
                         else:
                             st.markdown(f"""
                             <div class="prediction-box negative">
-                                <h2>😞 Sentimen: NEGATIF</h2>
+                                <h2>Sentimen: NEGATIF</h2>
                                 <p style="font-size: 1.2rem;">Tingkat Keyakinan: <strong>{probability[0]*100:.2f}%</strong></p>
                             </div>
                             """, unsafe_allow_html=True)
@@ -334,10 +333,10 @@ else:
     with tab3:
         st.header("ℹ️ Tentang Aplikasi")
         st.markdown("""
-        ### 📖 Deskripsi
+        ### Deskripsi
         Aplikasi ini menggunakan model **Support Vector Machine (SVM)** untuk menganalisis sentimen teks dalam bahasa Indonesia.
         
-        ### 🔧 Teknologi yang Digunakan
+        ### Teknologi yang Digunakan
         - **Model**: SVM (Support Vector Machine) dengan kernel Linear
         - **Preprocessing**: 
           - Case Folding
@@ -346,15 +345,15 @@ else:
           - Stemming (Sastrawi)
         - **Feature Extraction**: TF-IDF Vectorization
         
-        ### 📊 Dataset
+        ### Dataset
         Dataset yang digunakan adalah review aplikasi Gojek dengan label sentimen Positif dan Negatif.
         
-        ### 🚀 Cara Menggunakan
+        ### Cara Menggunakan
         1. Masukkan teks yang ingin dianalisis di tab "Prediksi Sentimen"
         2. Klik tombol "Analisis Sentimen"
         3. Lihat hasil prediksi dan visualisasi probabilitas
         
-        ### 📝 Catatan
+        ### Catatan
         - Model ini dilatih dengan data yang sudah di-balance (undersampling)
         - Akurasi model: ~89% (SVM Linear)
         - Model dapat ditingkatkan dengan lebih banyak data training
